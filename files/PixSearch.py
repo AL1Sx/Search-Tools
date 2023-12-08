@@ -7,7 +7,7 @@
 import webbrowser
 import time
 
-print("PixSearch\n版本号:Beta2.1\n请在出现[>>>]后再键入相关命令.\n---")
+print("PixSearch\n版本号:Beta3\n请在出现[>>>]后再键入相关命令.\n---")
 
 while True:
     print('选择你所需要的图床')
@@ -23,27 +23,33 @@ while True:
         #print('[3]用户UID定向跳转')
         #print('[4]Pixiv小说搜索')
         #print('[5]Pixiv小说定向')
-        print('[Q]返回')
-        print('===')
+        print('[Q]返回\n===')
         choice = input('功能选择>>>')
 
         while True:
-            if choice == '1':#TagSearch
+            if choice == '1':#Tag
                 search_word = input('关键词>>>')
                 if search_word == 'QUIT':
                     break
-                url = ('https://www.pixiv.net/tags/' + search_word + '/artworks?s_mode=s_tag&ai_type=1')
+                url = f'https://www.pixiv.net/tags/{search_word}/artworks?s_mode=s_tag&ai_type=1'
                 webbrowser.open_new_tab(url)
                 print('正在打开' + url)   
             elif choice == '2':#PID
                 search_word = input('PID>>>')
                 if search_word == 'QUIT':
                     break
-                url = ('https://www.pixiv.net/artworks/' + search_word)
+                url = f'https://www.pixiv.net/artworks/{search_word}'
                 webbrowser.open_new_tab(url)
+            elif choice == '3':#UID
+                search_word = input('UID>>>')
+                if search_word == 'QUIT':
+                    break
+                url = f'https://www.pixiv.net/users/{search_word}'
+                webbrowser.open_new_tab(url)
+                print('正在打开' + url)
             elif 'Q' in choice or 'q' in choice:
                 break
-
+                             
     elif 'Q' in insert or 'q' in insert:
         print('即将在2秒后退出')
         time.sleep(2)
