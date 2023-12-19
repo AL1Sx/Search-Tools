@@ -20,7 +20,7 @@ while True:
         print('[1]Tag标签搜索')
         print('[2]PID定向跳转')
         #print('[2X]PID第一张原图')
-        #print('[3]用户UID定向跳转')
+        print('[3]用户UID定向跳转')
         #print('[4]Pixiv小说搜索')
         #print('[5]Pixiv小说定向')
         print('[Q]返回\n===')
