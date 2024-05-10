@@ -9,6 +9,8 @@ print("PixSearch\n版本号:v0.1.1\n请在出现[>>>]后再键入相关命令.\n
 while True:
     print('选择你所需要的图床')
     print('[P]Pixiv.net')
+    print('[J]JMComic')
+    #https://18comic.vip/album/523565
     print('[Q]退出')
     print('===')
     insert = input('图床选择>>>')
