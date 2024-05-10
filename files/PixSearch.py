@@ -1,17 +1,16 @@
 #TODO pixnovel搜索
 #TODO pixnovelid定向
-#TODO JM车牌号
+#TODO JM混淆
 import webbrowser
 import time
 import re
 
-print("PixSearch\n版本号:v0.1.1\n请在出现[>>>]后再键入相关命令.\n---")
+print("PixSearch\n版本号:v0.1.2\n请在出现[>>>]后再键入相关命令.\n---")
 
 while True:
     print('选择你所需要的图床')
     print('[P]Pixiv.net')
     print('[J]JMComic')
-    #https://18comic.vip/album/523565
     print('[Q]退出')
     print('===')
     insert = input('图床选择>>>')
@@ -67,6 +66,23 @@ while True:
 
             else:
                 continue
+    elif 'J' in insert or 'j' in insert:
+        print('选择你需要的功能(JMComic)')
+        print('[1]车牌号跳转')
+        print('[Q]返回\n===')
+        choice = input('功能选择>>>')
+
+        while True:
+            if choice == '1':#车牌
+                search_word = input('JM>>>')
+                if search_word == 'QUIT':
+                    break
+                url = f'https://18comic.vip/album/{search_word}'
+                webbrowser.open_new_tab(url)
+                print('正在打开' + url)
+            
+            elif 'Q' in choice or 'q' in choice:
+                break
                              
     elif 'Q' in insert or 'q' in insert:
         print('即将在2秒后退出')
